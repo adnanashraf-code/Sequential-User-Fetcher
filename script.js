@@ -7,7 +7,7 @@ button.addEventListener("click", fetchUsers);
 async function fetchUsers() {
   container.innerHTML = "";
   loading.textContent = "Loading users...";
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 4; i++) {
     const res = await fetch("https://randomuser.me/api/?results=1");
 
     const data = await res.json();

@@ -1,78 +1,137 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ===== BODY ===== */
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background: #0f172a;
   color: white;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  padding: 20px;
 }
 
+/* ===== CONTAINER ===== */
 .container {
-  width: 900px;
+  width: 100%;
+  max-width: 1100px;
   text-align: center;
 }
 
+/* ===== HEADING ===== */
 h1 {
   margin-bottom: 20px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 
+/* ===== BUTTON ===== */
 button {
-  padding: 12px 20px;
+  padding: 12px 22px;
   border: none;
   background: #22c55e;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-bottom: 30px;
+  transition: all 0.3s ease;
 }
 
 button:hover {
   background: #16a34a;
+  transform: translateY(-2px);
 }
 
+/* ===== GRID CONTAINER ===== */
 #userContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
 }
 
+/* ===== USER CARD ===== */
 .user-card {
   background: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 22px;
+  border-radius: 12px;
   text-align: center;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .user-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
+
+/* ===== AVATAR ===== */
 .avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   border: 3px solid #38bdf8;
+  object-fit: cover;
 }
+
+/* ===== USER TEXT ===== */
 .user-card h3 {
   margin-bottom: 8px;
   color: #38bdf8;
+  font-size: 1.1rem;
 }
 
 .user-card p {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #cbd5f5;
+  word-break: break-word;
 }
+
+/* ===== LOADING TEXT ===== */
 #loading {
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
   color: #38bdf8;
   font-family: "Courier New", Courier, monospace;
+  margin-bottom: 20px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .container {
+    padding-top: 30px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #userContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .user-card {
+    padding: 18px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
 }
